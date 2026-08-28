@@ -38,7 +38,8 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel:wght@400;600;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Great+Vibes&family=Montserrat:wght@200;300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" />
 
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="css/style.css?v=120.0" />
+  <link rel="stylesheet" href="css/style.css?v=125.0" />
+  <link rel="stylesheet" href="css/envelope.css?v=125.0" />
 </head>
 
 <body>
@@ -52,6 +53,12 @@
         <stop offset="60%" stop-color="#C5A059" />
         <stop offset="100%" stop-color="#9A7432" />
       </linearGradient>
+      <linearGradient id="threadGoldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#FFF8D6" />
+        <stop offset="35%" stop-color="#E5C578" />
+        <stop offset="70%" stop-color="#C5A059" />
+        <stop offset="100%" stop-color="#8F6E28" />
+      </linearGradient>
     </defs>
   </svg>
 
@@ -62,11 +69,106 @@
   <canvas id="sparkle-trail-canvas"></canvas>
 
   <!-- ===================================================================
+       SACRED GOLDEN THREAD (UNTIE THE KNOT) OPENING EXPERIENCE
+       =================================================================== -->
+  <div id="envelope-overlay" role="dialog" aria-label="Ashin and Vrinda Wedding Invitation">
+    <div class="thread-ambient-glow"></div>
+
+    <!-- Sacred Folio Card with Tied Thread & Knot -->
+    <div class="thread-folio-card" title="Tap to Untie the Sacred Thread">
+
+      <!-- Corner Botanical Accents -->
+      <svg class="thread-corner thread-corner-tl" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M5 5 C25 8, 55 25, 70 55 C55 45, 35 40, 5 5 Z" fill="#6B8A7A" opacity="0.45" />
+        <circle cx="20" cy="22" r="14" fill="#FCE5E2" opacity="0.8" />
+        <circle cx="18" cy="20" r="9" fill="#E8B4B8" opacity="0.75" />
+        <circle cx="19" cy="21" r="2.5" fill="#E5C578" />
+      </svg>
+      <svg class="thread-corner thread-corner-br" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M5 5 C25 8, 55 25, 70 55 C55 45, 35 40, 5 5 Z" fill="#6B8A7A" opacity="0.45" />
+        <circle cx="20" cy="22" r="14" fill="#FCE5E2" opacity="0.8" />
+        <circle cx="18" cy="20" r="9" fill="#E8B4B8" opacity="0.75" />
+        <circle cx="19" cy="21" r="2.5" fill="#E5C578" />
+      </svg>
+
+      <!-- Auspicious Ganapathi Header -->
+      <div class="thread-card-header">
+        <div class="thread-ganesha-wrap">
+          <svg class="thread-ganesha-svg" viewBox="0 0 80 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M40 8 C38 12 36 18 36 24 C38 22 42 22 44 24 C44 18 42 12 40 8 Z" fill="url(#goldFiligree)" />
+            <circle cx="40" cy="14" r="2" fill="url(#goldFiligree)" />
+            <path d="M33 22 C37 19 43 19 47 22" stroke="url(#goldFiligree)" stroke-width="2.2" stroke-linecap="round" />
+            <path d="M34 26 C24 24 16 32 18 44 C20 54 28 56 34 50" stroke="url(#goldFiligree)" stroke-width="2.5" stroke-linecap="round" />
+            <path d="M46 26 C56 24 64 32 62 44 C60 54 52 56 46 50" stroke="url(#goldFiligree)" stroke-width="2.5" stroke-linecap="round" />
+            <path d="M40 24 L40 40" stroke="url(#goldFiligree)" stroke-width="2.5" stroke-linecap="round" />
+            <path d="M40 40 C42 48 45 58 40 68 C36 76 26 76 24 68 C22 60 30 58 35 62" stroke="url(#goldFiligree)" stroke-width="2.8" stroke-linecap="round" />
+            <circle cx="35" cy="62" r="3" fill="url(#goldFiligree)" />
+          </svg>
+        </div>
+        <div class="thread-auspicious-mantra">॥ ശ്രീ ഗണേശായ നമഃ ॥</div>
+        <div class="thread-invitation-sub">Auspicious Wedding Invitation</div>
+      </div>
+
+      <!-- Couple Names & Date -->
+      <div class="thread-couple-wrap">
+        <p class="thread-invite-line">The Wedding Celebration of</p>
+        <h1 class="thread-couple-names">Ashin &amp; Vrinda</h1>
+        <div class="thread-date-line">Sunday • 06 September 2026 • Puthencruz</div>
+      </div>
+
+      <!-- Sacred Woven Golden Thread Band & Knot -->
+      <div class="sacred-thread-band">
+        <div class="sacred-thread-line"></div>
+        
+        <!-- Sacred Knot Bow & Dangling Tassels -->
+        <div class="sacred-knot-wrap" title="Tap to Untie">
+          <div class="sacred-knot-halo"></div>
+          <svg class="sacred-knot-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Left Bow Loop -->
+            <path d="M50 48 C36 28 14 34 22 52 C28 64 46 54 50 50 Z" fill="url(#threadGoldGradient)" stroke="#8F6E28" stroke-width="1.2" />
+            <path d="M48 48 C38 34 22 38 28 50 C32 58 45 52 48 48 Z" fill="#FAF7F2" opacity="0.3" />
+            
+            <!-- Right Bow Loop -->
+            <path d="M50 48 C64 28 86 34 78 52 C72 64 54 54 50 50 Z" fill="url(#threadGoldGradient)" stroke="#8F6E28" stroke-width="1.2" />
+            <path d="M52 48 C62 34 78 38 72 50 C68 58 55 52 52 48 Z" fill="#FAF7F2" opacity="0.3" />
+            
+            <!-- Dangling Left Tassel Cord -->
+            <path d="M48 52 Q 40 70 32 86" stroke="url(#threadGoldGradient)" stroke-width="3" stroke-linecap="round" />
+            <circle cx="31" cy="88" r="4.5" fill="url(#threadGoldGradient)" />
+            <path d="M28 92 L34 92 L31 99 Z" fill="url(#threadGoldGradient)" />
+
+            <!-- Dangling Right Tassel Cord -->
+            <path d="M52 52 Q 60 70 68 86" stroke="url(#threadGoldGradient)" stroke-width="3" stroke-linecap="round" />
+            <circle cx="69" cy="88" r="4.5" fill="url(#threadGoldGradient)" />
+            <path d="M66 92 L72 92 L69 99 Z" fill="url(#threadGoldGradient)" />
+
+            <!-- Center Knot Emblem -->
+            <circle cx="50" cy="49" r="11" fill="radial-gradient(circle, #FFF8D6 0%, #E5C578 50%, #8F6E28 100%)" stroke="#8F6E28" stroke-width="1.5" />
+            <circle cx="50" cy="49" r="7" fill="none" stroke="#FFFFFF" stroke-width="0.8" opacity="0.8" />
+            <circle cx="50" cy="49" r="3" fill="#8F6E28" />
+          </svg>
+        </div>
+      </div>
+
+      <!-- Action Button (Untie The Sacred Thread) -->
+      <div class="thread-action-wrap">
+        <button class="thread-untie-btn" type="button" aria-label="Untie the sacred thread">
+          <span>🪢</span>
+          <span>Tap to Untie the Thread</span>
+          <span>✨</span>
+        </button>
+        <span class="thread-hint-text">✦ Untie the sacred knot to open ✦</span>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ===================================================================
        MAIN DIGITAL INVITATION CONTENT
        =================================================================== -->
   <main class="main-wrapper">
 
-    <!-- 1. DIRECT CINEMATIC HERO ENTRANCE (GRAND FIRST IMPRESSION) -->
+    <!-- 1. COUPLE HERO SHOWCASE (IMAGE FIRST) -->
     <section class="invitation-card-section direct-hero-section reveal-on-scroll is-revealed">
       
       <!-- Auspicious Top Header Badge -->
@@ -103,56 +205,7 @@
       </div>
     </section>
 
-    <!-- 2. GROOM & BRIDE INTRO SECTION (MEET THE COUPLE) -->
-    <section class="invitation-card-section reveal-on-scroll is-revealed" style="padding-top: 32px; padding-bottom: 32px;">
-      <div class="section-subtitle-tag">— Meet The Couple —</div>
-      <h2 class="section-headline" style="margin-bottom: 16px;">Two Souls, One Sacred Journey</h2>
-
-      <div class="couple-profiles-grid">
-        <!-- Groom Card -->
-        <div class="couple-profile-card">
-          <div class="couple-monogram-emblem">
-            <span class="couple-monogram-letter">A</span>
-          </div>
-          <span class="profile-role-badge">The Groom</span>
-          <h3 class="profile-name">Ashin</h3>
-          <p class="profile-parents-info">
-            Son of <strong>Mrs. Sheeja Ajith Kumar &amp; Mr. Ajith Kumar</strong><br />
-            Ambalathingal House, Vadakkathara Road,<br />
-            Poonithura P.O., Pettah, Ernakulam.
-          </p>
-          <div class="profile-card-line"></div>
-          <p class="profile-invite-note">
-            “With warm hearts, we cordially invite you with family to bless our sacred union.”
-          </p>
-        </div>
-
-        <!-- Heart Connector -->
-        <div class="couple-heart-connector" aria-hidden="true">
-          <div class="heart-circle-badge">❤</div>
-        </div>
-
-        <!-- Bride Card -->
-        <div class="couple-profile-card">
-          <div class="couple-monogram-emblem">
-            <span class="couple-monogram-letter">V</span>
-          </div>
-          <span class="profile-role-badge">The Bride</span>
-          <h3 class="profile-name">Vrinda</h3>
-          <p class="profile-parents-info">
-            Daughter of <strong>Mrs. Sini. K. Damodharan &amp; Mr. Sudhakaran</strong><br />
-            Kunnumpurathu House, B.P.C. College Jn.,<br />
-            Mulakkulam North, Piravom.
-          </p>
-          <div class="profile-card-line"></div>
-          <p class="profile-invite-note">
-            “With love and joy, we invite you to celebrate this blessed milestone in our lives.”
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- 3. STREAMLINED FORMAL WEDDING INVITATION CARD -->
+    <!-- 2. FORMAL WEDDING INVITATION CARD (COMPLETE & STREAMLINED) -->
     <section class="invitation-card-section hero-wedding-card reveal-on-scroll is-revealed">
       
       <!-- Top-Left Botanical Floral Corner -->
@@ -202,18 +255,25 @@
       <!-- Invitation Statement -->
       <p class="invite-statement-text">
         <strong>Mrs. Sheeja Ajith Kumar &amp; Mr. Ajith Kumar</strong><br />
+        <span style="font-size: 0.95rem; color: var(--text-muted); font-style: normal; display: block; margin: 4px 0;">
+          Ambalathingal House, Vadakkathara Road, Poonithura P.O., Pettah
+        </span>
         cordially invite your esteemed presence with family<br />
         on the occasion of the marriage of their son
       </p>
 
-      <!-- Couple Names in Regal Typography -->
+      <!-- Couple Names & Bride Parent Details -->
       <div class="hero-couple-names-wrap">
         <h1 class="hero-groom-name">Ashin</h1>
         <span class="hero-weds-text">Weds</span>
         <h1 class="hero-bride-name">Vrinda</h1>
+        <p style="font-family: var(--font-serif-classic); font-size: 1.06rem; color: var(--text-body); margin-top: 8px;">
+          (D/o <strong>Mrs. Sini. K. Damodharan &amp; Mr. Sudhakaran</strong>,<br />
+          <span style="font-size: 0.94rem; color: var(--text-muted);">Kunnumpurathu House, B.P.C. College Jn., Mulakkulam North, Piravom</span>)
+        </p>
       </div>
 
-      <!-- Date & Malayalam Calendar (Sunday 6th September 2026 • 1202 Chingam - 21) -->
+      <!-- Date & Malayalam Calendar -->
       <div class="hero-date-block">
         <div class="hero-date-primary">on Sunday 6th September 2026</div>
         <div class="hero-date-malayalam">(1202 Chingam - 21)</div>
@@ -248,7 +308,7 @@
       </div>
     </section>
 
-    <!-- 4. LIVE COUNTDOWN & CALENDAR INTEGRATION -->
+    <!-- 3. LIVE COUNTDOWN & CALENDAR INTEGRATION -->
     <section class="invitation-card-section reveal-on-scroll">
       <div class="section-subtitle-tag">— Counting Down To The Auspicious Moment —</div>
       <h2 class="section-headline">Sunday, 06 September 2026</h2>
@@ -282,7 +342,7 @@
       </div>
     </section>
 
-    <!-- 5. CELEBRATION TIMELINE & EVENTS -->
+    <!-- 4. CELEBRATION TIMELINE & EVENTS -->
     <section class="invitation-card-section reveal-on-scroll">
       <div class="section-subtitle-tag">— Auspicious Celebrations —</div>
       <h2 class="section-headline">Ceremony &amp; Feast</h2>
@@ -355,7 +415,7 @@
       </div>
     </section>
 
-    <!-- 6. VENUE & 1-TOUCH GPS NAVIGATION (WITH QR CODE) -->
+    <!-- 5. VENUE & 1-TOUCH GPS NAVIGATION (WITH QR CODE) -->
     <section class="invitation-card-section reveal-on-scroll">
       <div class="section-subtitle-tag">— Location &amp; Directions —</div>
       <h2 class="section-headline">Pet Rose Event Centre</h2>
@@ -392,7 +452,7 @@
       </div>
     </section>
 
-    <!-- 7. WARM WISHES & BLESSINGS CONTACT -->
+    <!-- 6. WARM WISHES & BLESSINGS CONTACT -->
     <section class="invitation-card-section reveal-on-scroll">
       <div class="section-subtitle-tag">— Warm Wishes &amp; Blessings —</div>
       <h2 class="section-headline">With Best Wishes</h2>
@@ -431,7 +491,7 @@
       </div>
     </section>
 
-    <!-- 8. FOOTER -->
+    <!-- 7. FOOTER -->
     <footer class="invitation-footer reveal-on-scroll">
       <div class="gold-divider">
         <span class="gold-divider-icon">❦</span>
@@ -484,11 +544,12 @@
   <div class="toast-notice" role="alert"></div>
 
   <!-- JavaScript Modules with Cache-Busting -->
-  <script src="js/config.js?v=120.0"></script>
-  <script src="js/petals.js?v=120.0"></script>
-  <script src="js/sparkles.js?v=120.0"></script>
-  <script src="js/countdown.js?v=120.0"></script>
-  <script src="js/main.js?v=120.0"></script>
+  <script src="js/config.js?v=125.0"></script>
+  <script src="js/petals.js?v=125.0"></script>
+  <script src="js/sparkles.js?v=125.0"></script>
+  <script src="js/countdown.js?v=125.0"></script>
+  <script src="js/envelope.js?v=125.0"></script>
+  <script src="js/main.js?v=125.0"></script>
 
 </body>
 </html>

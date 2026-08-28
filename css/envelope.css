@@ -1,9 +1,9 @@
 /* ===================================================================
-   ROYAL WEDDING PRESENTATION BOX - ULTRA LUXURY GOLD EMBOSSED
+   SACRED GOLDEN THREAD (UNTIE THE KNOT) OPENING EXPERIENCE
    Ashin & Vrinda — Sunday, September 06, 2026
    =================================================================== */
 
-/* Prevent background scrolling while unboxing is active */
+/* Prevent page scrolling while overlay is active */
 body:not(.envelope-opened) {
   overflow: hidden !important;
   height: 100vh !important;
@@ -18,7 +18,7 @@ body:not(.envelope-opened) {
   width: 100vw;
   height: 100vh;
   height: 100dvh;
-  background: radial-gradient(circle at 50% 45%, #183324 0%, #0D1C14 55%, #050B08 100%);
+  background: radial-gradient(circle at 50% 45%, #152C1F 0%, #0C1A12 55%, #050B08 100%);
   z-index: 9999;
   display: flex;
   flex-direction: column;
@@ -27,7 +27,7 @@ body:not(.envelope-opened) {
   padding: 16px;
   box-sizing: border-box;
   overflow: hidden;
-  perspective: 1400px;
+  perspective: 1200px;
   transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.85s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -38,615 +38,351 @@ body:not(.envelope-opened) {
   display: none !important;
 }
 
-/* Ambient Radial Glow & Floating Golden Fireflies */
-.unboxing-ambient-glow {
+/* Ambient Radial Glow */
+.thread-ambient-glow {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: min(720px, 95vw);
-  height: min(720px, 95vw);
-  background: radial-gradient(circle, rgba(229, 197, 120, 0.32) 0%, rgba(30, 62, 43, 0.35) 45%, transparent 72%);
+  width: min(680px, 95vw);
+  height: min(680px, 95vw);
+  background: radial-gradient(circle, rgba(229, 197, 120, 0.28) 0%, rgba(30, 62, 43, 0.3) 45%, transparent 72%);
   border-radius: 50%;
   pointer-events: none;
-  animation: ambientBoxGlow 4.5s infinite alternate ease-in-out;
+  animation: threadGlowPulse 4.5s infinite alternate ease-in-out;
 }
 
-@keyframes ambientBoxGlow {
-  0% { transform: translate(-50%, -50%) scale(0.9); opacity: 0.6; }
+@keyframes threadGlowPulse {
+  0% { transform: translate(-50%, -50%) scale(0.92); opacity: 0.6; }
   100% { transform: translate(-50%, -50%) scale(1.15); opacity: 1; }
 }
 
 /* ─────────────────────────────────────────────────────────────
-   3D ROYAL WEDDING BOX CONTAINER
+   SACRED WEDDING FOLIO CARD CONTAINER
    ───────────────────────────────────────────────────────────── */
-.unboxing-stage {
+.thread-folio-card {
   position: relative;
-  width: min(400px, 92vw);
-  height: min(520px, 78vh);
-  max-height: 560px;
-  perspective: 1400px;
-  transform-style: preserve-3d;
+  width: min(390px, 90vw);
+  background: #FAF7F2;
+  border-radius: 22px;
+  padding: clamp(26px, 4vh, 36px) clamp(20px, 5vw, 28px) clamp(24px, 3.8vh, 32px);
+  text-align: center;
+  box-shadow: 
+    0 26px 70px rgba(0, 0, 0, 0.75),
+    0 0 0 1px rgba(184, 142, 62, 0.35),
+    0 0 45px rgba(229, 197, 120, 0.22);
+  border: 2.5px solid #2A4D38;
   cursor: pointer;
   z-index: 10;
   user-select: none;
   -webkit-user-select: none;
-  animation: boxFloat 5s infinite ease-in-out alternate;
-  transition: transform 0.4s ease-out;
+  animation: folioGentleFloat 5s infinite ease-in-out alternate;
+  transform-style: preserve-3d;
+  transition: transform 0.4s ease-out, box-shadow 0.4s ease;
 }
 
-@keyframes boxFloat {
-  0% { transform: translateY(0px) rotateX(2deg) rotateY(-1deg); }
-  50% { transform: translateY(-8px) rotateX(3.5deg) rotateY(1deg); }
-  100% { transform: translateY(4px) rotateX(1deg) rotateY(-2deg); }
+@keyframes folioGentleFloat {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-6px) rotate(0.4deg); }
+  100% { transform: translateY(3px) rotate(-0.4deg); }
 }
 
-/* The Box Base Body (Background Interior) */
-.box-base-interior {
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 50% 40%, #224330 0%, #162E21 60%, #0F2016 100%);
-  border-radius: 26px;
-  border: 3px solid #2B523B;
-  box-shadow: 
-    0 30px 80px rgba(0, 0, 0, 0.85),
-    0 0 0 1px rgba(229, 197, 120, 0.35),
-    0 0 50px rgba(229, 197, 120, 0.22);
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 16px;
-  box-sizing: border-box;
-}
-
-/* Inner Gold Silk Lining Pattern */
-.box-base-interior::before {
+/* Gold Inset Frame */
+.thread-folio-card::before {
   content: '';
   position: absolute;
-  inset: 6px;
-  border-radius: 20px;
-  border: 1.5px solid rgba(229, 197, 120, 0.4);
-  background: 
-    radial-gradient(circle at 50% 50%, rgba(229, 197, 120, 0.09) 0%, transparent 60%),
-    repeating-linear-gradient(45deg, transparent, transparent 15px, rgba(229, 197, 120, 0.03) 15px, rgba(229, 197, 120, 0.03) 16px);
-  pointer-events: none;
-}
-
-/* The Golden Invitation Card Inside (Emerges & Rises up) */
-.box-inner-card {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  background: #FAF7F2;
-  border-radius: 18px;
-  border: 1.5px solid #2A4D38;
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  padding: clamp(20px, 3vh, 28px) clamp(16px, 4vw, 22px);
-  text-align: center;
-  box-sizing: border-box;
-  opacity: 0.85;
-  transform: translateZ(0px) scale(0.96);
-  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.6s ease, box-shadow 0.8s ease;
-  z-index: 2;
-}
-
-.box-inner-card::before {
-  content: '';
-  position: absolute;
-  inset: 6px;
+  top: 7px;
+  left: 7px;
+  right: 7px;
+  bottom: 7px;
   border: 1px solid rgba(184, 142, 62, 0.45);
-  border-radius: 12px;
+  border-radius: 15px;
   pointer-events: none;
 }
 
-/* Card Interior Content */
-.inner-card-ganesha {
-  width: 44px;
-  height: 48px;
-  margin: 0 auto;
+/* Corner Botanical Filigree */
+.thread-corner {
+  position: absolute;
+  width: clamp(40px, 8vw, 55px);
+  height: clamp(40px, 8vw, 55px);
+  pointer-events: none;
+  opacity: 0.85;
 }
 
-.inner-card-ganesha svg {
+.thread-corner-tl {
+  top: 10px;
+  left: 10px;
+}
+
+.thread-corner-br {
+  bottom: 10px;
+  right: 10px;
+  transform: rotate(180deg);
+}
+
+/* Card Header (Lord Ganesha & Auspicious Invocation) */
+.thread-card-header {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 8px;
+}
+
+.thread-ganesha-wrap {
+  width: 48px;
+  height: 54px;
+  margin: 0 auto 6px;
+}
+
+.thread-ganesha-svg {
   width: 100%;
   height: 100%;
   display: block;
+  filter: drop-shadow(0 2px 6px rgba(184, 142, 62, 0.3));
 }
 
-.inner-card-title {
+.thread-auspicious-mantra {
   font-family: var(--font-royal);
-  font-size: 0.76rem;
+  font-size: clamp(0.74rem, 2.8vw, 0.82rem);
   font-weight: 700;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.22em;
   color: #8F6E28;
+  margin-bottom: 2px;
 }
 
-.inner-card-names {
+.thread-invitation-sub {
+  font-family: var(--font-royal);
+  font-size: clamp(0.66rem, 2.4vw, 0.72rem);
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: #1E3E2B;
+}
+
+/* Couple Typography */
+.thread-couple-wrap {
+  position: relative;
+  z-index: 2;
+  margin: 8px 0 14px;
+}
+
+.thread-invite-line {
+  font-family: var(--font-serif-classic);
+  font-size: clamp(0.92rem, 3.4vw, 1.05rem);
+  font-style: italic;
+  color: #4A6354;
+  margin-bottom: 2px;
+}
+
+.thread-couple-names {
   font-family: var(--font-script);
-  font-size: clamp(2.6rem, 8vw, 3.4rem);
+  font-size: clamp(2.8rem, 8.8vw, 3.6rem);
   color: #1E3E2B;
   line-height: 1.05;
-  margin: 4px 0;
+  margin: 2px 0;
   text-shadow: 0 1px 4px rgba(30, 62, 43, 0.15);
 }
 
-.inner-card-date {
+.thread-date-line {
   font-family: var(--font-royal);
-  font-size: 0.74rem;
+  font-size: clamp(0.68rem, 2.5vw, 0.76rem);
   font-weight: 700;
   letter-spacing: 0.18em;
   color: #8F6E28;
   text-transform: uppercase;
-}
-
-.inner-card-venue {
-  font-family: var(--font-serif-classic);
-  font-size: 0.96rem;
-  font-style: italic;
-  color: #4A6354;
-  margin-top: 2px;
+  margin-top: 4px;
 }
 
 /* ─────────────────────────────────────────────────────────────
-   3D GATEFOLD DOUBLE DOORS (RICH GOLD EMBOSSED EXTERIOR)
+   THE SACRED GOLDEN THREAD & KNOT WRAP (Interactive)
    ───────────────────────────────────────────────────────────── */
-.box-door {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 50%;
-  background: 
-    radial-gradient(ellipse at 50% 30%, rgba(229, 197, 120, 0.12) 0%, transparent 65%),
-    linear-gradient(135deg, #1A3827 0%, #11261B 55%, #0A1710 100%);
-  border: 2px solid #2B523B;
-  box-shadow: inset 0 0 25px rgba(0, 0, 0, 0.7);
-  z-index: 6;
-  transform-style: preserve-3d;
-  transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease;
-  overflow: hidden;
+.sacred-thread-band {
+  position: relative;
+  width: calc(100% + clamp(40px, 10vw, 56px));
+  margin-left: calc(-1 * clamp(20px, 5vw, 28px));
+  height: 38px;
+  margin-top: 14px;
+  margin-bottom: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
 }
 
-.box-door-left {
+/* Horizontal Woven Silk Cord */
+.sacred-thread-line {
+  position: absolute;
+  top: 50%;
   left: 0;
-  border-radius: 26px 0 0 26px;
-  transform-origin: left center;
-  border-right: 1px solid rgba(229, 197, 120, 0.45);
-}
-
-.box-door-right {
   right: 0;
-  border-radius: 0 26px 26px 0;
-  transform-origin: right center;
-  border-left: 1px solid rgba(229, 197, 120, 0.45);
-}
-
-/* Multi-Layered Gold Inset Borders & Corner Filigree */
-.box-door::before {
-  content: '';
-  position: absolute;
-  inset: 8px;
-  border: 1px solid rgba(229, 197, 120, 0.4);
-  pointer-events: none;
-}
-
-.box-door::after {
-  content: '';
-  position: absolute;
-  inset: 14px;
-  border: 1px dashed rgba(229, 197, 120, 0.25);
-  pointer-events: none;
-}
-
-.box-door-left::before {
-  border-radius: 18px 0 0 18px;
-  border-right: none;
-}
-
-.box-door-left::after {
-  border-radius: 12px 0 0 12px;
-  border-right: none;
-}
-
-.box-door-right::before {
-  border-radius: 0 18px 18px 0;
-  border-left: none;
-}
-
-.box-door-right::after {
-  border-radius: 0 12px 12px 0;
-  border-left: none;
-}
-
-/* Gold Shimmer Sweep Animation */
-.box-door-shimmer {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(115deg, transparent 30%, rgba(255, 248, 214, 0.15) 50%, transparent 70%);
-  background-size: 200% 200%;
-  animation: shimmerSweep 4.5s infinite ease-in-out;
-  pointer-events: none;
-  z-index: 1;
-}
-
-@keyframes shimmerSweep {
-  0% { background-position: -150% 0; }
-  50%, 100% { background-position: 150% 0; }
-}
-
-/* Ornate Corner Metal Art Brackets */
-.door-corner-metal {
-  position: absolute;
-  width: 44px;
-  height: 44px;
-  pointer-events: none;
-  opacity: 0.9;
-  z-index: 2;
-}
-
-.door-corner-tl {
-  top: 10px;
-  left: 10px;
-}
-
-.door-corner-tr {
-  top: 10px;
-  right: 10px;
-  transform: scaleX(-1);
-}
-
-.door-corner-bl {
-  bottom: 10px;
-  left: 10px;
-  transform: scaleY(-1);
-}
-
-.door-corner-br {
-  bottom: 10px;
-  right: 10px;
-  transform: scale(-1);
-}
-
-/* ─────────────────────────────────────────────────────────────
-   ORNATE DOOR ARTWORK (GANESHA, CALLIGRAPHY, LOTUS MOTIF)
-   ───────────────────────────────────────────────────────────── */
-/* Top Ganesha Crest spanning both doors */
-.door-ganesha-crest-half {
-  position: absolute;
-  top: 38px;
-  width: 90px;
-  height: 60px;
-  z-index: 3;
-  pointer-events: none;
-}
-
-.box-door-left .door-ganesha-crest-half {
-  right: 0;
-}
-
-.box-door-right .door-ganesha-crest-half {
-  left: 0;
-}
-
-.door-ganesha-crest-half svg {
-  width: 100%;
-  height: 100%;
-}
-
-/* Auspicious Title on Doors */
-.door-title-left,
-.door-title-right {
-  position: absolute;
-  top: 104px;
-  font-family: var(--font-royal);
-  font-size: clamp(0.68rem, 2.2vw, 0.74rem);
-  font-weight: 700;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--gold-light);
-  white-space: nowrap;
-  z-index: 3;
-}
-
-.door-title-left {
-  right: 12px;
-  text-align: right;
-}
-
-.door-title-right {
-  left: 12px;
-  text-align: left;
-}
-
-/* Grand Couple Names on Doors (Calligraphy & Foil) */
-.door-name-left,
-.door-name-right {
-  position: absolute;
-  top: 130px;
-  font-family: var(--font-script);
-  font-size: clamp(2.3rem, 7.5vw, 2.8rem);
-  color: #FFF3B0;
-  line-height: 1;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7), 0 0 14px rgba(229, 197, 120, 0.35);
-  z-index: 3;
-}
-
-.door-name-left {
-  right: 12px;
-  text-align: right;
-}
-
-.door-name-right {
-  left: 12px;
-  text-align: left;
-}
-
-/* Center Mandala Filigree Arch */
-.door-mandala-arch {
-  position: absolute;
-  top: 48%;
+  height: 6px;
   transform: translateY(-50%);
-  width: 140px;
-  height: 140px;
-  z-index: 2;
-  pointer-events: none;
-  opacity: 0.85;
-}
-
-.box-door-left .door-mandala-arch {
-  right: 0;
-}
-
-.box-door-right .door-mandala-arch {
-  left: 0;
-}
-
-.door-mandala-arch svg {
-  width: 100%;
-  height: 100%;
-}
-
-/* Bottom Decorative Lotus & Date on Doors */
-.door-bottom-block-left,
-.door-bottom-block-right {
-  position: absolute;
-  bottom: 24px;
-  z-index: 3;
-  pointer-events: none;
-}
-
-.door-bottom-block-left {
-  right: 14px;
-  text-align: right;
-}
-
-.door-bottom-block-right {
-  left: 14px;
-  text-align: left;
-}
-
-.door-date-tag {
-  font-family: var(--font-royal);
-  font-size: 0.68rem;
-  letter-spacing: 0.2em;
-  color: var(--gold-light);
-  text-transform: uppercase;
-  font-weight: 600;
-  margin-bottom: 4px;
-}
-
-.door-venue-tag {
-  font-family: var(--font-serif-classic);
-  font-size: 0.84rem;
-  font-style: italic;
-  color: #B8CCC0;
-}
-
-/* ─────────────────────────────────────────────────────────────
-   SATIN RIBBON & 3D WAX SEAL (Sits in Center of Doors)
-   ───────────────────────────────────────────────────────────── */
-.box-ribbon-wrap {
-  position: absolute;
-  top: 54%;
-  left: 0;
-  width: 100%;
-  height: 34px;
-  transform: translateY(-50%);
-  z-index: 10;
-  pointer-events: none;
+  background: repeating-linear-gradient(90deg, #D4AF37 0px, #FFF8D6 4px, #C5A059 8px, #8F6E28 12px);
+  border-radius: 4px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.35);
   transition: transform 0.6s ease, opacity 0.5s ease;
 }
 
-.box-ribbon-belt {
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(180deg, #2E5640 0%, #1E3C2C 50%, #11241A 100%);
-  border-top: 1.5px solid rgba(229, 197, 120, 0.45);
-  border-bottom: 1.5px solid rgba(229, 197, 120, 0.45);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.55);
-}
-
-.box-ribbon-belt::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: repeating-linear-gradient(90deg, transparent, transparent 12px, rgba(255, 243, 176, 0.2) 12px, rgba(255, 243, 176, 0.2) 14px);
-}
-
-/* 3D Royal Wax Seal Stamp */
-.box-wax-seal {
+/* Central Sacred Knot with Bow Loops & Dangling Tassels */
+.sacred-knot-wrap {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 78px;
-  height: 78px;
-  border-radius: 50%;
-  background: radial-gradient(circle at 35% 35%, #365D48 0%, #1E3B2B 60%, #0F2016 100%);
-  border: 2.5px solid #E5C578;
-  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.65), inset 0 2px 6px rgba(255, 255, 255, 0.35);
+  width: 90px;
+  height: 90px;
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 12;
   cursor: pointer;
-  pointer-events: auto;
-  animation: sealPulseLoop 2.6s infinite ease-in-out;
-  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+  z-index: 8;
+  animation: knotBreathPulse 2.6s infinite ease-in-out;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-/* Pulsing Radiant Ring */
-.box-wax-seal::after {
-  content: '';
-  position: absolute;
-  inset: -10px;
-  border-radius: 50%;
-  border: 1.5px solid rgba(229, 197, 120, 0.5);
-  animation: sealRingGlow 2.6s infinite ease-in-out;
-  pointer-events: none;
-}
-
-@keyframes sealRingGlow {
-  0%, 100% { transform: scale(0.92); opacity: 0.35; }
-  50% { transform: scale(1.22); opacity: 0.95; }
-}
-
-@keyframes sealPulseLoop {
+@keyframes knotBreathPulse {
   0%, 100% { transform: translate(-50%, -50%) scale(1); }
-  50% { transform: translate(-50%, -50%) scale(1.07); }
+  50% { transform: translate(-50%, -50%) scale(1.08); }
 }
 
-.unboxing-stage:hover .box-wax-seal {
-  transform: translate(-50%, -50%) scale(1.12);
-  box-shadow: 0 12px 32px rgba(229, 197, 120, 0.65);
+.thread-folio-card:hover .sacred-knot-wrap {
+  transform: translate(-50%, -50%) scale(1.14);
 }
 
-.box-wax-seal-svg {
+.sacred-knot-svg {
   width: 100%;
   height: 100%;
   display: block;
+  filter: drop-shadow(0 4px 12px rgba(184, 142, 62, 0.5));
+}
+
+/* Pulsing Radiant Halo behind Knot */
+.sacred-knot-halo {
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 1.5px dashed rgba(229, 197, 120, 0.6);
+  animation: knotHaloRotate 6s infinite linear;
+  pointer-events: none;
+}
+
+@keyframes knotHaloRotate {
+  0% { transform: rotate(0deg) scale(0.95); opacity: 0.5; }
+  50% { transform: rotate(180deg) scale(1.1); opacity: 0.9; }
+  100% { transform: rotate(360deg) scale(0.95); opacity: 0.5; }
 }
 
 /* ─────────────────────────────────────────────────────────────
-   TAP TO UNBOX INVITATION BUTTON
+   TAP TO UNTIE ACTION BUTTON
    ───────────────────────────────────────────────────────────── */
-.unboxing-action-bar {
-  margin-top: clamp(16px, 3vh, 24px);
-  text-align: center;
+.thread-action-wrap {
   position: relative;
-  z-index: 20;
+  z-index: 6;
+  margin-top: 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
 }
 
-.unboxing-tap-btn {
+.thread-untie-btn {
   background: var(--gold-gradient);
   color: #122419;
   border: none;
-  padding: 13px 32px;
+  padding: 12px 28px;
   border-radius: var(--radius-full);
   font-family: var(--font-sans);
-  font-size: 0.9rem;
+  font-size: clamp(0.82rem, 3.2vw, 0.9rem);
   font-weight: 700;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.05em;
   cursor: pointer;
-  box-shadow: 0 8px 26px rgba(229, 197, 120, 0.45);
+  box-shadow: 0 8px 24px rgba(229, 197, 120, 0.45);
   display: inline-flex;
   align-items: center;
   gap: 8px;
   transition: var(--transition-smooth);
-  animation: unboxBtnFloat 2.2s infinite ease-in-out;
+  animation: untieBtnGlow 2.2s infinite ease-in-out;
 }
 
-@keyframes unboxBtnFloat {
+@keyframes untieBtnGlow {
   0%, 100% { transform: translateY(0); box-shadow: 0 6px 20px rgba(229, 197, 120, 0.35); }
-  50% { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(229, 197, 120, 0.65); }
+  50% { transform: translateY(-3px); box-shadow: 0 12px 28px rgba(229, 197, 120, 0.65); }
 }
 
-.unboxing-tap-btn:hover {
-  transform: translateY(-5px) scale(1.04);
-  box-shadow: 0 16px 36px rgba(229, 197, 120, 0.7);
+.thread-untie-btn:hover {
+  transform: translateY(-4px) scale(1.04);
+  box-shadow: 0 14px 34px rgba(229, 197, 120, 0.7);
+}
+
+.thread-hint-text {
+  font-family: var(--font-royal);
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #8F6E28;
+  opacity: 0.9;
 }
 
 /* ─────────────────────────────────────────────────────────────
-   STAGE-BY-STAGE UNBOXING ANIMATION SEQUENCE
+   UNTYING ANIMATION CHOREOGRAPHY ON TAP
    ───────────────────────────────────────────────────────────── */
-/* Stage 1: Wax Seal Crack & Ribbon Fade */
-#envelope-overlay.opening .box-wax-seal {
-  animation: sealShatterCrack 0.6s forwards ease !important;
+/* Stage 1: The knot loops unravel and expand */
+#envelope-overlay.opening .sacred-knot-wrap {
+  animation: knotUnravel 0.75s forwards cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
-@keyframes sealShatterCrack {
+@keyframes knotUnravel {
   0% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
-  40% { transform: translate(-50%, -50%) scale(1.4); opacity: 0.9; filter: brightness(2); }
-  100% { transform: translate(-50%, -50%) scale(2.2); opacity: 0; filter: blur(4px); }
+  40% { transform: translate(-50%, -50%) scale(1.35) rotate(15deg); opacity: 0.9; filter: brightness(1.8); }
+  100% { transform: translate(-50%, -50%) scale(2.2) rotate(45deg); opacity: 0; filter: blur(6px); }
 }
 
-#envelope-overlay.opening .box-ribbon-wrap {
-  transform: translateY(-50%) scaleX(1.4);
+/* Stage 2: The threads glide away to left and right */
+#envelope-overlay.opening .sacred-thread-line {
+  transform: translateY(-50%) scaleX(1.6);
   opacity: 0;
-  transition: transform 0.6s ease, opacity 0.5s ease;
+  transition: transform 0.65s ease, opacity 0.55s ease;
 }
 
-/* Stage 2: 3D Gatefold Doors Swing Open (Left & Right) */
-#envelope-overlay.opening .box-door-left {
-  transform: rotateY(-118deg);
-  opacity: 0.15;
-  transition: transform 0.95s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.95s ease;
+/* Stage 3: The Folio Card Unfolds and Dissolves */
+#envelope-overlay.opening .thread-folio-card {
+  animation: folioUnfoldZoom 0.95s forwards cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
-#envelope-overlay.opening .box-door-right {
-  transform: rotateY(118deg);
-  opacity: 0.15;
-  transition: transform 0.95s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.95s ease;
+@keyframes folioUnfoldZoom {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  35% {
+    transform: scale(1.06) translateY(-8px);
+    opacity: 1;
+    filter: brightness(1.25);
+  }
+  100% {
+    transform: scale(1.18) translateY(-30px);
+    opacity: 0;
+    filter: blur(10px);
+  }
 }
 
-/* Stage 3: Inside Card Rises Up in 3D */
-#envelope-overlay.opening .box-inner-card {
-  opacity: 1;
-  transform: translateZ(50px) scale(1.05);
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6), 0 0 35px rgba(229, 197, 120, 0.4);
-}
-
-/* Stage 4: Entire Stage Dissolves with Golden Light */
-#envelope-overlay.opening .unboxing-stage {
-  animation: stageUnveilZoom 1s 0.2s forwards cubic-bezier(0.16, 1, 0.3, 1) !important;
-}
-
-@keyframes stageUnveilZoom {
-  0% { transform: scale(1); opacity: 1; }
-  60% { transform: scale(1.06) translateY(-10px); opacity: 1; filter: brightness(1.2); }
-  100% { transform: scale(1.18) translateY(-30px); opacity: 0; filter: blur(10px); }
-}
-
-#envelope-overlay.opening .unboxing-action-bar {
-  opacity: 0;
-  transform: translateY(10px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-/* Mobile Responsiveness */
+/* Mobile Optimizations */
 @media (max-width: 480px) {
-  .unboxing-stage {
-    width: min(340px, 90vw);
-    height: min(460px, 72vh);
+  .thread-folio-card {
+    padding: 22px 18px 20px;
+    border-radius: 18px;
   }
-  .door-name-left,
-  .door-name-right {
-    font-size: 2.1rem;
-    top: 110px;
+  .thread-couple-names {
+    font-size: 2.6rem;
   }
-  .door-title-left,
-  .door-title-right {
-    top: 90px;
-    font-size: 0.64rem;
+  .sacred-knot-wrap {
+    width: 78px;
+    height: 78px;
   }
-  .inner-card-names {
-    font-size: 2.4rem;
+  .sacred-thread-band {
+    margin-bottom: 20px;
   }
-  .box-wax-seal {
-    width: 66px;
-    height: 66px;
+  .thread-untie-btn {
+    padding: 10px 22px;
+    font-size: 0.82rem;
   }
 }

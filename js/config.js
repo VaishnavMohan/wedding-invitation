@@ -65,7 +65,7 @@ const WEDDING_CONFIG = {
     city: "Ernakulam",
     state: "Kerala",
     fullAddress: "Pet Rose Event Centre, Pathammile, Vadayampady P.O., Puthencruz, Ernakulam, Kerala 682308",
-    googleMapsUrl: "https://share.google/MXy8X1QMQs6zt7JF0",
+    googleMapsUrl: "https://maps.app.goo.gl/AMYLqvt9achFLu336?g_st=aw",
     appleMapsUrl: "https://maps.apple.com/?q=Pet+Rose+Event+Centre+Puthencruz"
   },
 
@@ -104,7 +104,7 @@ const WEDDING_CONFIG = {
       description: "Sacred marriage rituals, Thalikettu, garland exchange, and receiving divine blessings in the presence of family and loved ones.",
       rituals: ["Traditional Rites", "Thalikettu & Garlands", "Elders' Blessings"],
       locationName: "Pet Rose Event Centre, Pathammile, Puthencruz",
-      mapsUrl: "https://share.google/MXy8X1QMQs6zt7JF0"
+      mapsUrl: "https://maps.app.goo.gl/AMYLqvt9achFLu336?g_st=aw"
     },
     {
       step: "02",
@@ -116,7 +116,7 @@ const WEDDING_CONFIG = {
       description: "Join us for a royal traditional Kerala wedding feast, heartfelt conversations, congratulations, and memorable moments with the couple.",
       rituals: ["Royal Kerala Sadhya", "Meet & Congratulate", "Photos & Fellowship"],
       locationName: "Pet Rose Event Centre, Pathammile, Puthencruz",
-      mapsUrl: "https://share.google/MXy8X1QMQs6zt7JF0"
+      mapsUrl: "https://maps.app.goo.gl/AMYLqvt9achFLu336?g_st=aw"
     }
   ]
 };
